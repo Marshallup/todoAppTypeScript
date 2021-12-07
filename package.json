@@ -1,0 +1,14 @@
+{
+  "name": "todo-list",
+  "source": "./src/index.pug",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "serve": "parcel",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-pug": "^2.0.1",
+    "@parcel/transformer-sass": "^2.0.1",
+    "parcel": "^2.0.1"
+  }
+}
