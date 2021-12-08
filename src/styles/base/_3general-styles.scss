@@ -30,4 +30,24 @@ input:-webkit-autofill:active {
 
 html {
   font-size: px($htmlFontSize);
+  font-family: 'Muller';
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+h1 {
+  font-size: rem(50);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: #D06B54;
+  margin: 35px 0;
+}
+.icon {
+  &-delete {
+    width: rem(15);
+    height: rem(15);
+    background: url('../img/delete.svg') center center/cover no-repeat;
+    cursor: pointer;
+  }
 }

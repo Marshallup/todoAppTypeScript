@@ -1,4 +1,32 @@
-const text: number = 2;
+const createInput: HTMLTextAreaElement = document.getElementById('todo-create');
+const createInputWrap: HTMLElement = createInput.parentElement;
+const createInputDelete: HTMLElement = createInputWrap.querySelector('.todo-app-header-field__delete');
+const createInputLabel: HTMLLabelElement = createInput.parentElement.querySelector('label');
+
+createInput.onfocus = function() {
+  createInputLabel.classList.add('focus-input');
+  console.log('focus')
+}
+createInput.onblur = function() {
+  if (createInput.value) {
+    return;
+  }
+  createInputLabel.classList.remove('focus-input');
+  console.log('blur')
+}
+createInputDelete.onclick = function() {
+  createInput.value = '';
+  createInputWrap.classList.remove('isValue');
+  createInputLabel.classList.remove('focus-input');
+}
+createInput.addEventListener('input', function () {
+  if (this.value) {
+    createInputWrap.classList.add('isValue');
+  } else {
+    createInputWrap.classList.remove('isValue');
+  }
+})
+
 // class TodoApp {
 
 //   constructor(appSelector) {

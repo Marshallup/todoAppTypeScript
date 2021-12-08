@@ -1,5 +1,8 @@
 // Пример подключения
-// @include font-face("Roboto-Black", "Roboto-Black", 400, "normal", "woff");
+@include font-face("Muller", "MullerThin", 200, "normal", "woff2");
+@include font-face("Muller", "MullerLight", 300, "normal", "woff2");
+@include font-face("Muller", "MullerRegular", 400, "normal", "woff2");
+@include font-face("Muller", "MullerMedium", 500, "normal", "woff2");
 @font-face {
   font-family: 'Material Icons';
   font-style: normal;

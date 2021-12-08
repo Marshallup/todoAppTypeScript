@@ -10,7 +10,8 @@
 }
 
 @function rem($pixels, $context: $htmlFontSize) {
-	@return calc($pixels / $context)rem;
+	$remSize: calc($pixels/$context);
+	@return #{$remSize}rem;
 }
 @function px($number) {
 	@return #{$number}px;
