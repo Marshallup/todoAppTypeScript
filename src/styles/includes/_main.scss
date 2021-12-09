@@ -1,7 +1,24 @@
 .todo-app {
+  padding-top: rem(100);
   min-height: 100vh;
+  &__title {
+    margin-top: 0;
+  }
+  &__btn {
+    padding: rem(9) rem(8);
+    background: #D06B54;
+    border-radius: rem(6);
+    outline: none;
+    border: none;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+  &__container {
+    padding: 0 rem(45);
+  }
   &__wrapper {
-    padding: rem(45);
+    padding: rem(45) 0;
     background: #FFFFFF;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
   }
@@ -37,6 +54,35 @@
         background: url('../img/check.svg') center center/cover no-repeat;
       }
     }
+    &--circle {
+      display: flex;
+      align-items: center;
+      .todo-app-checkbox__text {
+        margin-left: rem(8);
+        font-size: rem(15);
+        line-height: rem(15);
+        letter-spacing: 0.04em;
+        color: #4F4F4F;
+        cursor: pointer;
+        user-select: none;
+      }
+      .todo-app-checkbox__icon {
+        width: rem(24);
+        height: rem(24);
+        &:before {
+          width: rem(10);
+          height: rem(10);
+          border-radius: 100%;
+        }
+      }
+      .todo-app-checkbox__item:checked + .todo-app-checkbox__icon {
+        background: transparent;
+        border-color: rgba(#000000, 0.1);
+        &:before {
+          background: #D06B54;
+        }
+      }
+    }
   }
   &-header {
     &-field {
@@ -69,6 +115,7 @@
         transform-origin: 0 0;
         cursor: text;
         width: 100%;
+        user-select: none;
         &.focus-input {
           transform: translate(0, -16px) scale(0.8);
         }
@@ -81,8 +128,35 @@
     }
   }
   &-list {
-    margin-top: rem(45) !important;
+    margin: rem(45) 0 !important;
     list-style-type: none;
+    &__item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      margin-bottom: rem(16);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &.done {
+        .todo-app-list__text {
+          text-decoration: line-through;
+        }
+      }
+    }
+    &__text {
+      margin-left: rem(15);
+      color: #4F4F4F;
+    }
+    &__delete {
+      top: 5px;
+      right: 0;
+      position: absolute;
+    }
+  }
+  &-filter {
+    display: flex;
+    justify-content: space-between;
   }
 }
 // .todo-app {
