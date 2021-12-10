@@ -1,8 +1,9 @@
+require('./filter');
+
 const createInput = document.getElementById('todo-create') as HTMLTextAreaElement;
 const createInputWrap = createInput.parentElement as HTMLElement;
 const createInputDelete = createInputWrap.querySelector('.todo-app-header-field__delete') as HTMLElement;
 const createInputLabel = createInput.parentElement.querySelector('label') as HTMLLabelElement;
-const filterInputs: HTMLCollectionBase = document.querySelectorAll('.todo-app-filter .todo-app-checkbox__item');
 
 createInput.onfocus = function() {
   createInputLabel.classList.add('focus-input');
@@ -25,12 +26,31 @@ createInput.addEventListener('input', function () {
     createInputWrap.classList.remove('isValue');
   }
 });
-Array.from(filterInputs).forEach(item => {
-  item.addEventListener('change', function() {
-    Array.from(filterInputs).forEach(itemEl => {
-      const checkbox = itemEl as HTMLInputElement;
-      checkbox.checked = false;
+createInput.addEventListener('keypress', function(event: KeyboardEvent) {
+  if (event.code === 'Enter') {
+    event.preventDefault();
+    const enter = new CustomEvent("enter", {
+      bubbles: true,
+      cancelable: true,
+      composed: false,
     });
-    this.checked = true;
-  })
+    if (this.value) {
+      this.dispatchEvent(enter);
+    }
+    return false;
+  }
 });
+
+function addInputFocus(): void {
+  createInput.focus();
+}
+
+function removeInputValue(): void {
+  createInput.value = '';
+  createInputWrap.classList.remove('isValue');
+}
+
+export {
+  addInputFocus,
+  removeInputValue,
+}
