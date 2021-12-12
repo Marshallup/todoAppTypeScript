@@ -1,7 +1,8 @@
 @import "./base/1vars";
 @import "./base/2mixins";
+@import "../../node_modules/normalize.css/normalize.css";
+@import "../../node_modules/animate.css/animate.min.css";
 @import "./base/fonts";
 @import "./base/3general-styles";
-@import "./includes/materialize-fonts";
 @import "./includes/main";
 @import "./includes/footer";

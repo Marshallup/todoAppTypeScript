@@ -4,7 +4,6 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(http-equiv="X-UA-Compatible" content="IE=edge")
     meta(name="viewport" content="width=device-width, initial-scale=1.0")
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     link(rel="stylesheet", href="./styles/style.scss")
     title Document
   body
@@ -12,13 +11,9 @@ html(lang="en")
       .container
         .row
           .col
-            h1.todo-app__title Список дел
+            h1.animate__fadeOut.todo-app__title Список дел
             .todo-app__wrapper
-              .todo-app-header.todo-app__container
-                .todo-app-header-field
-                  textarea#todo-create.todo-app-header-field__item
-                  .icon-delete.todo-app-header-field__delete
-                  label.todo-app-header-field__label(for="todo-create") Что нужно сделать ?
+              include ./pug/header.pug
               include ./pug/list.pug
               include ./pug/footer.pug
     script(type="module" src="./scripts/index.ts")

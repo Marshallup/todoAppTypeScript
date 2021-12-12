@@ -35,9 +35,10 @@ html {
 .container {
   max-width: 720px;
   margin: 0 auto;
+  padding: 0 rem(20);
 }
 h1 {
-  font-size: rem(50);
+  font-size: rem(40);
   font-weight: 400;
   letter-spacing: 0.04em;
   color: #D06B54;
@@ -49,5 +50,19 @@ h1 {
     height: rem(15);
     background: url('../img/delete.svg') center center/cover no-repeat;
     cursor: pointer;
+  }
+  &-filter {
+    width: rem(31);
+    height: rem(25);
+    background: url('../img/filter.svg') center center/contain no-repeat;
+    cursor: pointer;
+  }
+}
+.hide {
+  display: none !important;
+}
+@media screen and (max-width: $laptopWidth) {
+  html {
+    font-size: 14px;
   }
 }

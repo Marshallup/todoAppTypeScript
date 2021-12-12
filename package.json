@@ -10,5 +10,9 @@
     "@parcel/transformer-pug": "^2.0.1",
     "@parcel/transformer-sass": "^2.0.1",
     "parcel": "^2.0.1"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "normalize.css": "^8.0.1"
   }
 }

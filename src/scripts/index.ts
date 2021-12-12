@@ -1,6 +1,8 @@
 require('./ui');
-import TodoCreate from "./todo-create";
-import TodoList from "./todo-list";
+import TodoCreate from "./todo/todo-create";
+import TodoFilter from "./todo/todo-filter";
+import TodoList from "./todo/todo-list";
 
 const todoList = new TodoList;
-const create =  new TodoCreate(todoList);
+const todoFilter = new TodoFilter(todoList);
+new TodoCreate(todoList, todoFilter);

@@ -1,15 +1,20 @@
-.todo-app-footer.todo-app__container
-  .todo-app-filter
-    label.todo-app-checkbox.todo-app-checkbox--circle.todo-app-checkbox__all
-      input(type="checkbox" checked name="filter").todo-app-checkbox__item
-      .todo-app-checkbox__icon
-      .todo-app-checkbox__text Показать все
-    label.todo-app-checkbox.todo-app-checkbox--circle.todo-app-checkbox__completed
-      input(type="checkbox" name="filter").todo-app-checkbox__item
-      .todo-app-checkbox__icon
-      .todo-app-checkbox__text Выполненные
-    label.todo-app-checkbox.todo-app-checkbox--circle.todo-app-checkbox__active
-      input(type="checkbox" name="filter").todo-app-checkbox__item
-      .todo-app-checkbox__icon
-      .todo-app-checkbox__text Активные
+.todo-app-footer
+  #todo-filter.todo-app-filter.todo-app__container.hide
+    .icon-filter.todo-app-filter__item-icon
+    .todo-app-filter-checkboxes
+      .todo-app-filter-checkboxes-header
+        .todo-app-filter-checkboxes-header__title Фильтр
+        .icon-delete.todo-app-filter-checkboxes-header__delete
+      label.todo-app-filter__item-checkbox.todo-app-checkbox.todo-app-checkbox--circle.todo-app-checkbox__all
+        input(type="checkbox" checked name="all").todo-app-checkbox__item
+        .todo-app-checkbox__icon
+        .todo-app-checkbox__text Показать все
+      label.todo-app-filter__item-checkbox.todo-app-checkbox.todo-app-checkbox--circle.todo-app-checkbox__completed
+        input(type="checkbox" name="done").todo-app-checkbox__item
+        .todo-app-checkbox__icon
+        .todo-app-checkbox__text Выполненные
+      label.todo-app-filter__item-checkbox.todo-app-checkbox.todo-app-checkbox--circle.todo-app-checkbox__active
+        input(type="checkbox" name="active").todo-app-checkbox__item
+        .todo-app-checkbox__icon
+        .todo-app-checkbox__text Активные
     button.todo-app__btn Удалить все
