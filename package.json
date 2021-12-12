@@ -1,7 +1,7 @@
 {
   "name": "todo-list",
   "source": "./src/index.pug",
-  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "browserslist": "> 0.5%, last 2 versions, ie >= 9",
   "scripts": {
     "serve": "parcel",
     "build": "parcel build"
@@ -9,10 +9,23 @@
   "devDependencies": {
     "@parcel/transformer-pug": "^2.0.1",
     "@parcel/transformer-sass": "^2.0.1",
-    "parcel": "^2.0.1"
+    "autoprefixer": "^10.4.0",
+    "parcel": "^2.0.1",
+    "postcss": "^8.1.0"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
     "normalize.css": "^8.0.1"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "overrideBrowserslist": [
+          "> 0.5%",
+          "last 2 versions",
+          "ie >= 9"
+        ]
+      }
+    }
   }
 }
